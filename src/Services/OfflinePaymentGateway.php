@@ -1,10 +1,10 @@
 <?php
 
-namespace Acelle\Cashier\Services;
+namespace MailStok\Cashier\Services;
 
-use Acelle\Library\Contracts\PaymentGatewayInterface;
-use Acelle\Library\TransactionResult;
-use Acelle\Model\Transaction;
+use MailStok\Library\Contracts\PaymentGatewayInterface;
+use MailStok\Library\TransactionResult;
+use MailStok\Model\Transaction;
 
 class OfflinePaymentGateway implements PaymentGatewayInterface
 {
@@ -56,12 +56,12 @@ class OfflinePaymentGateway implements PaymentGatewayInterface
 
     public function getSettingsUrl() : string
     {
-        return action("\Acelle\Cashier\Controllers\OfflineController@settings");
+        return action("\MailStok\Cashier\Controllers\OfflineController@settings");
     }
 
     public function getCheckoutUrl($invoice) : string
     {
-        return action("\Acelle\Cashier\Controllers\OfflineController@checkout", [
+        return action("\MailStok\Cashier\Controllers\OfflineController@checkout", [
             'invoice_uid' => $invoice->uid,
         ]);
     }

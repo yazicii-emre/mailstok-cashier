@@ -1,15 +1,15 @@
 <?php
 
-namespace Acelle\Cashier\Controllers;
+namespace MailStok\Cashier\Controllers;
 
-use Acelle\Http\Controllers\Controller;
+use MailStok\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use Acelle\Cashier\Services\BraintreePaymentGateway;
-use Acelle\Library\Facades\Billing;
-use Acelle\Model\Setting;
-use Acelle\Library\AutoBillingData;
-use Acelle\Model\Invoice;
-use Acelle\Library\TransactionResult;
+use MailStok\Cashier\Services\BraintreePaymentGateway;
+use MailStok\Library\Facades\Billing;
+use MailStok\Model\Setting;
+use MailStok\Library\AutoBillingData;
+use MailStok\Model\Invoice;
+use MailStok\Library\TransactionResult;
 
 class BraintreeController extends Controller
 {

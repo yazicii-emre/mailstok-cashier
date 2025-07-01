@@ -10,7 +10,7 @@
  * Checks the type of field values passed to make sure they are what the command expects.
  */
 
- namespace Acelle\Cashier\Library\CoinPayment;
+ namespace MailStok\Cashier\Library\CoinPayment;
 
  use Exception;
 

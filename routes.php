@@ -11,7 +11,7 @@
 |
 */
 
-Route::group(['middleware' => ['web'], 'namespace' => 'Acelle\Cashier\Controllers'], function () {
+Route::group(['middleware' => ['web'], 'namespace' => 'Mailstok\Cashier\Controllers'], function () {
     Route::group(['middleware' => ['validate.payment']], function () {
 
         // direct

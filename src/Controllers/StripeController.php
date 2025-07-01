@@ -1,15 +1,15 @@
 <?php
 
-namespace Acelle\Cashier\Controllers;
+namespace MailStok\Cashier\Controllers;
 
-use Acelle\Http\Controllers\Controller;
+use MailStok\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use Acelle\Cashier\Services\StripePaymentGateway;
-use Acelle\Library\Facades\Billing;
-use Acelle\Model\Setting;
-use Acelle\Model\Invoice;
-use Acelle\Library\TransactionResult;
-use Acelle\Library\AutoBillingData;
+use MailStok\Cashier\Services\StripePaymentGateway;
+use MailStok\Library\Facades\Billing;
+use MailStok\Model\Setting;
+use MailStok\Model\Invoice;
+use MailStok\Library\TransactionResult;
+use MailStok\Library\AutoBillingData;
 
 
 class StripeController extends Controller
@@ -63,7 +63,7 @@ class StripeController extends Controller
 
     public function getCheckoutUrl($invoice)
     {
-        return action("\Acelle\Cashier\Controllers\StripeController@checkout", [
+        return action("\MailStok\Cashier\Controllers\StripeController@checkout", [
             'invoice_uid' => $invoice->uid,
         ]);
     }

@@ -1,20 +1,20 @@
 <?php
 
-namespace Acelle\Cashier\Controllers;
+namespace MailStok\Cashier\Controllers;
 
-use Acelle\Http\Controllers\Controller;
+use MailStok\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use Acelle\Cashier\Services\ShopierPaymentGateway;
-use Acelle\Library\Facades\Billing;
-use Acelle\Model\Setting;
-use Acelle\Model\Invoice;
-use Acelle\Library\TransactionResult;
+use MailStok\Cashier\Services\ShopierPaymentGateway;
+use MailStok\Library\Facades\Billing;
+use MailStok\Model\Setting;
+use MailStok\Model\Invoice;
+use MailStok\Library\TransactionResult;
 
 // Yeni Eklenenler
-use Acelle\Cashier\Controllers\Api\ShopierApiController;
+use MailStok\Cashier\Controllers\Api\ShopierApiController;
 
-use Acelle\Model\SubscriptionLog;
-use Acelle\Library\Facades\SubscriptionFacade;
+use MailStok\Model\SubscriptionLog;
+use MailStok\Library\Facades\SubscriptionFacade;
 
 use Shopier\Models\ShopierResponse;
 
@@ -74,7 +74,7 @@ class ShopierController extends Controller
 
         /* Normal Sayfa içerisnide Açmak için kullanılıyor */
 
-        return action("\Acelle\Cashier\Controllers\ShopierController@checkout", [
+        return action("\MailStok\Cashier\Controllers\ShopierController@checkout", [
             'invoice_uid' => $invoice->uid,
         ]);
     }
@@ -127,7 +127,7 @@ class ShopierController extends Controller
             $totalAmount = $invoice->total();
 
             // Convert USD to TRY with proper formatting
-            // $currencyService = new \Acelle\Services\CurrencyRateService();
+            // $currencyService = new \MailStok\Services\CurrencyRateService();
             // $convertUsdToTry = $currencyService->convertUsdToTry($totalAmount);
 
             $billingAddress = $customer->billingAddresses()
@@ -328,7 +328,7 @@ class ShopierController extends Controller
 
             // Send IP assignment notification to admin if applicable
             if ($invoice->customer && $invoice->customer->canUseDedicatedIpAddress()) {
-                \Acelle\Model\Admin::sendIpAssignmentEmailToAdmin($invoice);
+                \MailStok\Model\Admin::sendIpAssignmentEmailToAdmin($invoice);
             }
 
             \DB::commit();

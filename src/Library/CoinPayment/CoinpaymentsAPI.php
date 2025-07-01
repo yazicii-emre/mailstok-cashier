@@ -19,9 +19,9 @@
  * manipulate.
  */
 
-namespace Acelle\Cashier\Library\CoinPayment;
+namespace MailStok\Cashier\Library\CoinPayment;
 
-use Acelle\Cashier\Library\CoinPayment\CoinpaymentsCurlRequest;
+use MailStok\Cashier\Library\CoinPayment\CoinpaymentsCurlRequest;
 use Exception;
 
 class CoinpaymentsAPI

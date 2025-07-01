@@ -1,10 +1,10 @@
 <?php
 
-namespace Acelle\Cashier\Library;
+namespace MailStok\Cashier\Library;
 
 use Exception;
-use Acelle\Library\Contracts\PaymentGatewayInterface;
-use Acelle\Library\Facades\Billing;
+use MailStok\Library\Contracts\PaymentGatewayInterface;
+use MailStok\Library\Facades\Billing;
 
 class AutoBillingData
 {

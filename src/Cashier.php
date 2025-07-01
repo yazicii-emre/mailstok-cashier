@@ -1,6 +1,6 @@
 <?php
 
-namespace Acelle\Cashier;
+namespace MailStok\Cashier;
 
 use Illuminate\Support\ServiceProvider;
 

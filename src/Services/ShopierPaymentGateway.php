@@ -1,13 +1,13 @@
 <?php
 
-namespace Acelle\Cashier\Services;
+namespace MailStok\Cashier\Services;
 
-use Acelle\Cashier\Cashier;
-use Acelle\Library\Contracts\PaymentGatewayInterface;
+use MailStok\Cashier\Cashier;
+use MailStok\Library\Contracts\PaymentGatewayInterface;
 use Carbon\Carbon;
-use Acelle\Model\Invoice;
-use Acelle\Library\TransactionResult;
-use Acelle\Model\Transaction;
+use MailStok\Model\Invoice;
+use MailStok\Library\TransactionResult;
+use MailStok\Model\Transaction;
 use Illuminate\Support\Facades\Http;
 
 class ShopierPaymentGateway implements PaymentGatewayInterface
@@ -80,13 +80,13 @@ class ShopierPaymentGateway implements PaymentGatewayInterface
 
     public function getSettingsUrl(): string
     {
-        return action("\Acelle\Cashier\Controllers\ShopierController@settings");
+        return action("\MailStok\Cashier\Controllers\ShopierController@settings");
     }
 
     public function getCheckoutUrl($invoice): string
     {
 
-        return action("\Acelle\Cashier\Controllers\ShopierController@checkout", [
+        return action("\MailStok\Cashier\Controllers\ShopierController@checkout", [
             'invoice_uid' => $invoice->uid,
         ]);
     }
@@ -175,7 +175,7 @@ class ShopierPaymentGateway implements PaymentGatewayInterface
             'buyer_phone' => $invoice->customer->phone ?? '',
             'total_order_value' => $invoice->total(),
             'currency' => 'TRY',
-            'callback_url' => action("\Acelle\Cashier\Controllers\ShopierController@callback"),
+            'callback_url' => action("\MailStok\Cashier\Controllers\ShopierController@callback"),
         ];
 
         $signature = $this->generateSignature($data);

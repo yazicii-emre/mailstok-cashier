@@ -1,14 +1,14 @@
 <?php
 
-namespace Acelle\Cashier\Services;
+namespace MailStok\Cashier\Services;
 
 use Illuminate\Support\Facades\Log;
-use Acelle\Library\Contracts\PaymentGatewayInterface;
+use MailStok\Library\Contracts\PaymentGatewayInterface;
 use Carbon\Carbon;
-use Acelle\Cashier\Cashier;
-use Acelle\Model\Invoice;
-use Acelle\Library\TransactionResult;
-use Acelle\Model\Transaction;
+use MailStok\Cashier\Cashier;
+use MailStok\Model\Invoice;
+use MailStok\Library\TransactionResult;
+use MailStok\Model\Transaction;
 
 class RazorpayPaymentGateway implements PaymentGatewayInterface
 {
@@ -67,12 +67,12 @@ class RazorpayPaymentGateway implements PaymentGatewayInterface
 
     public function getSettingsUrl() : string
     {
-        return action("\Acelle\Cashier\Controllers\RazorpayController@settings");
+        return action("\MailStok\Cashier\Controllers\RazorpayController@settings");
     }
 
     public function getCheckoutUrl($invoice) : string
     {
-        return action("\Acelle\Cashier\Controllers\RazorpayController@checkout", [
+        return action("\MailStok\Cashier\Controllers\RazorpayController@checkout", [
             'invoice_uid' => $invoice->uid,
         ]);
     }

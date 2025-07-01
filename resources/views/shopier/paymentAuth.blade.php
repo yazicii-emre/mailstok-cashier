@@ -3,7 +3,7 @@
     <title>{{ trans('cashier::messages.shopier') }}</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <script type="text/javascript" src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-    <link rel="stylesheet" href="{{ \Acelle\Cashier\Cashier::public_url('/vendor/acelle-cashier/css/main.css') }}">
+    <link rel="stylesheet" href="{{ \MailStok\Cashier\Cashier::public_url('/vendor/acelle-cashier/css/main.css') }}">
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
     @include('layouts.core._includes')
@@ -18,7 +18,7 @@
     // Placeholder function to handle payment redirect to Shopier
     function redirectToShopier() {
         $.ajax({
-            url: '{{ action("\Acelle\Cashier\Controllers\ShopierController@checkout", ['invoice_uid' => $invoice->uid]) }}',
+            url: '{{ action("\MailStok\Cashier\Controllers\ShopierController@checkout", ['invoice_uid' => $invoice->uid]) }}',
             type: 'POST',
             data: {
                 _token: '{{ csrf_token() }}',

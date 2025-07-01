@@ -28,7 +28,7 @@
 
                 <div class="d-flex align-items-center">
                     <form method="POST"
-                        action="{{ \Acelle\Cashier\Cashier::lr_action('\Acelle\Cashier\Controllers\OfflineController@claim', [
+                        action="{{ \MailStok\Cashier\Cashier::lr_action('\MailStok\Cashier\Controllers\OfflineController@claim', [
                             'invoice_uid' => $invoice->uid,
                         ]) }}">
                         {{ csrf_field() }}

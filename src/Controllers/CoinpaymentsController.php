@@ -1,14 +1,14 @@
 <?php
 
-namespace Acelle\Cashier\Controllers;
+namespace MailStok\Cashier\Controllers;
 
-use Acelle\Http\Controllers\Controller;
+use MailStok\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use Acelle\Cashier\Services\CoinpaymentsPaymentGateway;
-use Acelle\Library\Facades\Billing;
-use Acelle\Model\Setting;
-use Acelle\Model\Invoice;
-use Acelle\Library\TransactionResult;
+use MailStok\Cashier\Services\CoinpaymentsPaymentGateway;
+use MailStok\Library\Facades\Billing;
+use MailStok\Model\Setting;
+use MailStok\Model\Invoice;
+use MailStok\Library\TransactionResult;
 
 class CoinpaymentsController extends Controller
 {

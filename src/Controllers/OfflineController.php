@@ -1,13 +1,13 @@
 <?php
 
-namespace Acelle\Cashier\Controllers;
+namespace MailStok\Cashier\Controllers;
 
-use Acelle\Http\Controllers\Controller;
+use MailStok\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use Acelle\Model\Setting;
-use Acelle\Library\Facades\Billing;
-use Acelle\Library\TransactionResult;
-use Acelle\Model\Invoice;
+use MailStok\Model\Setting;
+use MailStok\Library\Facades\Billing;
+use MailStok\Library\TransactionResult;
+use MailStok\Model\Invoice;
 
 class OfflineController extends Controller
 {

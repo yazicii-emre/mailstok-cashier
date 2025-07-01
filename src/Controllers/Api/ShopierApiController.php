@@ -1,8 +1,8 @@
 <?php
 
-namespace Acelle\Cashier\Controllers\Api;
+namespace MailStok\Cashier\Controllers\Api;
 
-use Acelle\Http\Controllers\Controller;
+use MailStok\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
 //use JetBrains\PhpStorm\Language;
@@ -18,7 +18,7 @@ use Shopier\Enums\Currency;
 use Shopier\Enums\ProductType;
 use Shopier\Enums\WebsiteIndex;
 
-use Acelle\Model\Setting;
+use MailStok\Model\Setting;
 
 
 class ShopierApiController extends Controller

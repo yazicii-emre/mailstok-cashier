@@ -1,10 +1,10 @@
 <?php
 
-namespace Acelle\Cashier\Services;
+namespace MailStok\Cashier\Services;
 
-use Acelle\Library\Contracts\PaymentGatewayInterface;
-use Acelle\Library\TransactionResult;
-use Acelle\Model\Transaction;
+use MailStok\Library\Contracts\PaymentGatewayInterface;
+use MailStok\Library\TransactionResult;
+use MailStok\Model\Transaction;
 
 class StripePaymentGateway implements PaymentGatewayInterface
 {
@@ -76,12 +76,12 @@ class StripePaymentGateway implements PaymentGatewayInterface
 
     public function getSettingsUrl() : string
     {
-        return action("\Acelle\Cashier\Controllers\StripeController@settings");
+        return action("\MailStok\Cashier\Controllers\StripeController@settings");
     }
 
     public function getAutoBillingDataUpdateUrl($returnUrl='/') : string
     {
-        return \Acelle\Cashier\Cashier::lr_action("\Acelle\Cashier\Controllers\StripeController@autoBillingDataUpdate", [
+        return \MailStok\Cashier\Cashier::lr_action("\MailStok\Cashier\Controllers\StripeController@autoBillingDataUpdate", [
             'return_url' => $returnUrl,
         ]);
     }
@@ -126,7 +126,7 @@ class StripePaymentGateway implements PaymentGatewayInterface
                 $payment_intent_id = $e->getError()->payment_intent->id;
                 // $payment_intent = \Stripe\PaymentIntent::retrieve($payment_intent_id);
 
-                $authPaymentLink = action("\Acelle\Cashier\Controllers\StripeController@paymentAuth", [
+                $authPaymentLink = action("\MailStok\Cashier\Controllers\StripeController@paymentAuth", [
                     'invoice_uid' => $invoice->uid,
                     'payment_intent_id' => $payment_intent_id,
                 ]);
@@ -180,7 +180,7 @@ class StripePaymentGateway implements PaymentGatewayInterface
      */
     public function getCheckoutUrl($invoice) : string
     {
-        return action("\Acelle\Cashier\Controllers\StripeController@checkout", [
+        return action("\MailStok\Cashier\Controllers\StripeController@checkout", [
             'invoice_uid' => $invoice->uid,
         ]);
     }
