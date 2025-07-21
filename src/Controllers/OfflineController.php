@@ -95,7 +95,7 @@ class OfflineController extends Controller
     {
         $service = $this->getPaymentService();
         $invoice = Invoice::findByUid($invoice_uid);
-
+         
         // exceptions
         if (!$invoice->isNew()) {
             throw new \Exception('Invoice is not new');
@@ -105,7 +105,9 @@ class OfflineController extends Controller
         $invoice->checkout($service, function($invoice) {
             return new TransactionResult(TransactionResult::RESULT_PENDING);
         });
+
         
-        return redirect()->away(Billing::getReturnUrl());;
+        
+        return redirect()->away(Billing::getReturnUrl())->with('alert-success', trans('messages.payment.claimed'));
     }
 }
